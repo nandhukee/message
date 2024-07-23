@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Box</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f0f0f0;
+      }
+
+      .message-box {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+        border: 2px solid #ffc107;
+      }
+
+      .avatar {
+        background: #ffc107;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        margin: 0 auto 10px;
+      }
+
+      h2 {
+        color: #333;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      input[type="text"] {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        background: #ffc107;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        margin: 5px;
+      }
+
+      button:hover {
+        background: #e0a800;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-box">
+      <div class="avatar"></div>
+      <h2>Ask Me a Question</h2>
+      <input type="text" id="question" placeholder="Type something..." />
+      <div class="buttons">
+        <button id="accept">Accept</button>
+        <button id="decline">Decline</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("accept").addEventListener("click", function () {
+        var question = document.getElementById("question").value;
+        if (question.trim() === "") {
+          alert("Please type a question before accepting.");
+        } else {
+          alert("Accepted!");
+        }
+      });
+
+      document.getElementById("decline").addEventListener("click", function () {
+        alert("Declined!");
+      });
+    </script>
+  </body>
+</html>
